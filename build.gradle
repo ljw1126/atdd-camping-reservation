@@ -30,6 +30,7 @@ dependencies {
     
     // Database
     runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'com.mysql:mysql-connector-j'
     
     // Lombok
     compileOnly 'org.projectlombok:lombok'
@@ -42,4 +43,8 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+compileJava {
+    options.compilerArgs << '-parameters'
 }
